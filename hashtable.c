@@ -1,0 +1,1 @@
+hashentry hashtable[HTSIZE]
