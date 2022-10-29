@@ -32,6 +32,6 @@ int main(int argc, char** argv){
   printBoard();
   //printf("%c\n",BRD(0,MAXL,0,0,1));
   //printf("%d\n",(int)((unsigned char)('A'|0x80)));
-  printf("%x\n", (unsigned long)board );
+  printf("%lx\n", (unsigned long)board );
   return 0;
 }

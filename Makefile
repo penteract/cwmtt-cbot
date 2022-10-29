@@ -4,7 +4,7 @@ CFLAGS=-I. -Wall
 .PHONY: all
 all: main
 
-main: main.c board.c pgnparser.c printing.c
+main: main.c board.c pgnparser.c printing.c movegen.c
 	$(CC) -o $@ $< $(CFLAGS)
 
 .PHONY: clean
