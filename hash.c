@@ -5,10 +5,10 @@ unsigned long c = 1;
 unsigned long  hashTimeline(int l){
   unsigned long state = timelineStarts[l];
   for(int t = timelineStarts[l]; t<=timelineEnds[l]; t++){
-    state = state*a+c;
+    state = state*hash_a+c;
     for (int y=0;y<8;y++){
       state^=*((unsigned long*)(&BRD(t&1,l,t>>1,0,y));
-      state = state*a+c;
+      state = state*hash_a+c;
     }
   }
   return (state>>31)|(state<<33);
