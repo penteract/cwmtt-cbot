@@ -2,12 +2,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <assert.h>
+#include <stdbool.h>
 
 #include <board.c>
 #include <pgnparser.c>
 #include <printing.c>
 
+#include <movegen.c>
+
 char input[10000];
+
 
 int main(int argc, char** argv){
   char* t = &(BRD(0,MAXL,0,0,0));

@@ -53,6 +53,8 @@ piecepos addHalfTurn(piecepos brd){
     return (brd^UC)+((brd&UC)>>15);
 }
 
+// Apply a move to the current board state
+// Assumes the move is valid - does not do any form of verification
 void apply(move mv){
     assert(UX==1); //If this changes, some of this code needs changing
     char c = *(BRDP(mv->src));
