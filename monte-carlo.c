@@ -22,7 +22,7 @@ struct Threat{
 }
 
 piecepos threat[2*MAXL];
-
+/*
 void doRun(int numsteps){
   //find threats (places where a king could be captured
   int nthreats = getThreats();
@@ -54,7 +54,7 @@ void doRun(int numsteps){
     score = doRun(numsteps);
     unfold(score);
   }
-}
+}*/
 
 /**
 returns the number of moves in the returned moveset

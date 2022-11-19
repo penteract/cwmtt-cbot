@@ -25,7 +25,7 @@ bool inBounds(piecepos src, int delta, piecepos dst){
     if (((UY|UT|UL|UC)&carry) == shouldcarry){ //there has been no overflow when adding signed components of delta to unsigned conmponents of src (dst is unsigned)
         int dstl = (dst&(UC-UL))>>13;
         if(minL<=dstl && dstl<=maxL){
-            int dstt = (dst&(UL-UT))>>6;
+            int dstt = ((dst&(UL-UT))>>5) + ((dst&UC)>>21);
             if (timelineEnds[dstl]>=dstt && timelineStarts[dstl]<=dstt){
                 return true;
             }

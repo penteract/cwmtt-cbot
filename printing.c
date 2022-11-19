@@ -29,3 +29,17 @@ void printBoard(){
     printf("\n");
   }
 }
+
+void printMove(struct Move mv){
+  int srcl=((mv.src&(UC-UL))>>13) - MAXL;
+  int srct=(mv.src&(UL-UT))>>6;
+  int srcx=(mv.src&(UY-UX))>>0;
+  int srcy=(mv.src&(UT-UY))>>3;
+
+  int dstl=((mv.dst&(UC-UL))>>13) - MAXL;
+  int dstt=(mv.dst&(UL-UT))>>6;
+  int dstx=(mv.dst&(UY-UX))>>0;
+  int dsty=(mv.dst&(UT-UY))>>3;
+  if(srct==dstt && srcl==dstl) printf("(%dT%d)%c%d%c%d", srcl,srct,'a'+srcx,srcy+1,'a'+dstx,dsty+1);
+  else printf("(%dT%d)%c%d>>(%dT%d)%c%d", srcl,srct,'a'+srcx,srcy+1,dstl,dstt,'a'+dstx,dsty+1);
+}

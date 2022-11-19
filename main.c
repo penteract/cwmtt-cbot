@@ -29,9 +29,25 @@ int main(int argc, char** argv){
   printf("bytes read %d\n", n);
   printf("parse result %d\n",parse(input));
   printf("minL %d  maxL %d\n", minL,maxL);
-  printBoard();
+  while(true){
+    printBoard();
+    int l;
+    printf("Enter Timeline:");
+    scanf ("%d",&l);
+    printf("read val: %d\n", l);
+    genMoves(l);
+    printf("number of moves: %d\n", numMoves[l]);
+    for(int i=0;i<numMoves[l];i++){
+      printf("%d:",i);
+      printMove(availableMoves[l][i]);
+      printf("\n");
+    }
+    printf("Enter Move:");
+    scanf ("%d",&n);
+    apply(&availableMoves[l][n]);
+  }
   //printf("%c\n",BRD(0,MAXL,0,0,1));
   //printf("%d\n",(int)((unsigned char)('A'|0x80)));
-  printf("%lx\n", (unsigned long)board );
+  //printf("%lx\n", (unsigned long)board );
   return 0;
 }

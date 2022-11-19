@@ -115,7 +115,16 @@ void apply(move mv){
 }
 
 void setup(){
-  
+  // For "Standard - Turn Zero"
+  for(int x=0;x<8;x++){
+    BRDB(MAXL,0,x,1)='P';
+    BRDB(MAXL,0,x,6)='p';
+    BRDB(MAXL,0,x,0)="RNBQKBNR"[x];
+    BRDB(MAXL,0,x,7)="rnbqkbnr"[x];
+    for(int y=2;y<6;y++){
+      BRDB(MAXL,0,x,y)=0;
+    }
+  }
   for(int x=0;x<8;x++){
     BRDW(MAXL,1,x,1)='P';
     BRDW(MAXL,1,x,6)='p';
@@ -127,6 +136,6 @@ void setup(){
   }
   minL=MAXL;
   maxL=MAXL;
-  timelineStarts[MAXL]=2;
+  timelineStarts[MAXL]=1;
   timelineEnds[MAXL]=2;
 }
