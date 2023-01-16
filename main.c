@@ -9,6 +9,7 @@
 #include <printing.c>
 
 #include <movegen.c>
+#include <findchecks.c>
 
 char input[10000];
 

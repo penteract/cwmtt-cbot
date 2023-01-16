@@ -154,7 +154,7 @@ void genMoves(int l){
         }
         if((piece&0x5f)=='K'){
             for(int i=0;i<80-9;i++){
-                int d = bishopDeltas[i];
+                int d = rookDeltas[i];
                 piecepos dstpos = d+srcpos;
                 if (inBounds(srcpos,d,dstpos) && (board[dstpos]==0 || (board[dstpos]&0x20)!=c5)){
                     availableMoves[l][numMoves[l]].src=srcpos;

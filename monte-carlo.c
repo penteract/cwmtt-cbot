@@ -1,6 +1,24 @@
 
 struct Move moveset[2*MAXL];
 
+// move history: a series of entries containing the prior values of timelineEnds[minL..maxL] followed by the prior values of minL and then maxL
+unsigned char rewind[(MAXL*2+2)*MAXT*2];
+int histLen = 0;
+void histPush(){
+  for(int i=minL;i<=maxL;i++){
+    rewind[histLen++]=timelineEnds[i];
+  }
+  rewind[histLen++]=minL;
+  rewind[histLen++]=maxL;
+}
+void histPush(){
+  assert(histLen>0);
+  maxL = rewind[--histLen];
+  maxL = rewind[--histLen];
+  for(int i=maxL;i>=minL;i--){
+    timelineEnds[i]=rewind[--histLen];
+  }
+}
 
 struct Node{
   unsigned int weight;
